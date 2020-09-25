@@ -9,6 +9,7 @@ public class LineComparisonComputation {
 		double lengthLineTwo = 0;
 		String lineOneLength = "";
 		String lineTwoLength = "";
+		int compareToValue = 0;
 		
 		//Co-ordinates of Line 1
 		//Assuming the coordinates to be less than 100
@@ -35,11 +36,13 @@ public class LineComparisonComputation {
 		lineTwoLength = String.valueOf(lengthLineTwo);
 		
 		//Comparing the length of two lines
-		if (lineOneLength.equals(lineTwoLength)) {
+		compareToValue = lineOneLength.compareTo(lineTwoLength);
+		if (compareToValue == 0) {
 			System.out.println("The two lines are equal in length");
-		}
-		else {
-			System.out.println("The two lines are not equal in length");
+		} else if(compareToValue > 0) {
+			System.out.println("Line One is longer than Line Two");
+		} else {
+			System.out.println("Line Two is longer than Line One");
 		}
 	}
 }
